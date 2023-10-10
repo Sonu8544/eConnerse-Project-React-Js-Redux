@@ -13,7 +13,7 @@ const CartContext = createContext(initialState);
 
 const useCart = () => useContext(CartContext);
 
-const cartProvider = ({ children }) => {
+const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(initialState.cart || []);
 
   // Cart Item Count
@@ -78,4 +78,4 @@ const cartProvider = ({ children }) => {
   );
 };
 
-export { useCart, cartProvider };
+export { useCart, CartProvider };

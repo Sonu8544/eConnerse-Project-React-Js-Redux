@@ -6,17 +6,21 @@ import { Product } from "./components/product";
 import { NotFound } from "./components/not-found";
 import { NavBar } from "./components/navbar";
 import { Item } from "./components/item";
+import { useCart } from "./context/cart";
+
 
 function App() {
 
 const navigate = useNavigate();
+const {cartItemCount} = useCart()
+
 const onSearch = (searchQuery) => {
   navigate(`/?${createSearchParams({ q: searchQuery})}`)
 }
 
   return (
     <>
-    <NavBar onSearch={onSearch} cartItemCount={12} />
+    <NavBar onSearch={onSearch} cartItemCount={cartItemCount()} />
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/home" element={<Products />} />

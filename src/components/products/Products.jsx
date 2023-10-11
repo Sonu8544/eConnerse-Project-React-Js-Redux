@@ -3,6 +3,8 @@ import fakeStoreApi from "../../services/fake-store-api";
 import { Item } from "../item";
 import { useSearchParams } from "react-router-dom";
 import { useCart } from "../../context/cart";
+import { NotFound } from "../not-found";
+
 
 const Products = () => {
   const [loading, setLoading] = useState(true);
@@ -34,7 +36,7 @@ const Products = () => {
   if (!loading && searchQuery && !product.length) { // Corrected the variable name to product
     return (
       <div className="bg-gray-200">
-        <h1 className="text-2xl text-orange-500">Product Not Found</h1>
+       <NotFound />
       </div>
     );
   }

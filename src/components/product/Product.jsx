@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import fakeStoreApi from "../../services/fake-store-api";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/cart";
+import { NotFound } from "../not-found";
 
 const Product = () => {
   const [loading, setLoading] = useState(true);
@@ -35,13 +36,14 @@ const Product = () => {
 
   if (!loading && !product) {
     return (
-      <h1 className="text-3xl text-orange-500">
-        Product Not Found
-        <Link to="/" className="text-blue-500">
-          Home
-        </Link>
-        see all Available product
-      </h1>
+      // <h1 className="text-3xl text-orange-500">
+      //   Product Not Found
+      //   <Link to="/" className="text-blue-500">
+      //     Home
+      //   </Link>
+      //   see all Available product
+      // </h1>
+      <NotFound />
     );
   }
   const { title, image, description, price } = product;

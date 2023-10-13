@@ -14,7 +14,6 @@ const Products = () => {
   const {addToCart} = useCart()
 
   const searchQuery = query.get("q");
-  console.log(searchQuery);
 
   useEffect(() => {
     const fetchProducts = async () => {

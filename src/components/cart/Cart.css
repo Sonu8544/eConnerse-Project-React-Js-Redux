@@ -56,6 +56,11 @@
     cursor: pointer;
 }
 
+.border{
+    border: 8rem solid orange;
+    box-sizing: 2px 0 0 black;
+}
+
 .payment {
     align-self: start;
     background-color: #fff;
